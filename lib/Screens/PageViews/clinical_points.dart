@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:uponly_doc_plus/Screens/PageViews/doctor_helpline.dart';
 
-class FindTrusted extends StatelessWidget {
-  const FindTrusted({super.key});
+class ClinicalPoints extends StatelessWidget {
+  const ClinicalPoints({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +17,13 @@ class FindTrusted extends StatelessWidget {
           // Img , Heading 1 , Heading 2
           Cards(
             img: 'assets/find_trusted.jpeg',
-            head1: 'Find Trusted',
+            head1: 'Clinical points',
             head2:
-                'Trust, knowledge, regard, and loyalty\n  are the 4 elements that form the\n doctor-patient relationship, and the\n    nature of this relationship has an \n        impact on patient outcomes.',
+                '   The doctor-patient relationship\n  involves vulnerability and trust,\n It is one of the most moving and\n   meaningful experience shared\n by human beings. However, this\n relatinship and the encounters that\n flow from it are not always perfect.',
           ),
           Padding(
             padding: const EdgeInsets.only(
-              top: 30,
+              top: 60,
               left: 50,
             ),
             child: SizedBox(
@@ -34,7 +34,7 @@ class FindTrusted extends StatelessWidget {
                   Get.to(DoctorsHelpling());
                 },
                 child: Text(
-                  'Next',
+                  'Get Started',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w300,
@@ -45,37 +45,6 @@ class FindTrusted extends StatelessWidget {
                     borderRadius: BorderRadius.circular(50),
                   ),
                   backgroundColor: Colors.purple,
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(
-              top: 15,
-              left: 50,
-            ),
-            child: SizedBox(
-              width: 320,
-              height: 47,
-              child: ElevatedButton(
-                onPressed: () {},
-                child: Text(
-                  'Skip',
-                  style: TextStyle(
-                    color: Colors.purple,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50),
-                  ),
-                  backgroundColor: Colors.white,
-                  side: BorderSide(
-                    width: 2,
-                    color: Colors.purple,
-                  ), //border width and color
                 ),
               ),
             ),
