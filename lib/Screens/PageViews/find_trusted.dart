@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:uponly_doc_plus/Screens/PageViews/doctor_helpline.dart';
 
 class FindTrusted extends StatelessWidget {
   const FindTrusted({super.key});
@@ -12,7 +14,12 @@ class FindTrusted extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Cards(),
+          // Img , Heading 1 , Heading 2
+          Cards(
+            'assets/find_trusted.jpeg',
+            'Find Trusted',
+            'Trust, knowledge, regard, and loyalty\n  are the 4 elements that form the\n doctor-patient relationship, and the\n    nature of this relationship has an \n        impact on patient outcomes.',
+          ),
           Padding(
             padding: const EdgeInsets.only(
               top: 30,
@@ -22,7 +29,9 @@ class FindTrusted extends StatelessWidget {
               width: 320,
               height: 47,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(DoctorsHelpling());
+                },
                 child: Text(
                   'Next',
                   style: TextStyle(
@@ -76,50 +85,40 @@ class FindTrusted extends StatelessWidget {
   }
 }
 
-class Cards extends StatefulWidget {
-  const Cards({super.key});
-
-  @override
-  State<Cards> createState() => _CardsState();
-}
-
-class _CardsState extends State<Cards> {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 20, left: 30),
-      child: Container(
-        height: 500,
-        width: 360,
-        child: Card(
-          shadowColor: Colors.grey,
-          elevation: 10,
-          child: Column(
-            children: [
-              Image.asset('assets/find_trusted.jpeg'),
-              Text(
-                'Find Trusted',
+Widget Cards(img, head1, head2) {
+  return Padding(
+    padding: const EdgeInsets.only(top: 20, left: 30),
+    child: Container(
+      height: 500,
+      width: 360,
+      child: Card(
+        shadowColor: Colors.grey,
+        elevation: 10,
+        child: Column(
+          children: [
+            Image.asset(img),
+            Text(
+              head1,
+              style: TextStyle(
+                color: Colors.grey[700],
+                fontSize: 40,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                head2,
                 style: TextStyle(
-                  color: Colors.grey[700],
-                  fontSize: 40,
-                  fontWeight: FontWeight.w700,
+                  wordSpacing: 2,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w400,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  'Trust, knowledge, regard, and loyalty\n  are the 4 elements that form the\n doctor-patient relationship, and the\n    nature of this relationship has an \n        impact on patient outcomes.',
-                  style: TextStyle(
-                    wordSpacing: 2,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
-    );
-  }
+    ),
+  );
 }

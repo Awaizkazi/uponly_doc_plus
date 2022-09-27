@@ -1,8 +1,6 @@
 import 'dart:async';
 import 'package:get/get.dart';
-
 import 'package:flutter/material.dart';
-
 import 'PageViews/find_trusted.dart';
 
 class SplashScreen extends StatefulWidget {
