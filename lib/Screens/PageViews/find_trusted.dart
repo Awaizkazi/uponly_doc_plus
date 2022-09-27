@@ -7,10 +7,6 @@ class FindTrusted extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Contorller to keep track of which page we're on
-    PageController _controller = PageController();
-    // Keep track of if we are on the last page
-    bool onLastPage = false;
     return Scaffold(
       body: Column(
         children: [
