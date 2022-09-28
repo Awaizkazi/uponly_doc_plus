@@ -27,7 +27,7 @@ class FindTrusted extends StatelessWidget {
               height: 47,
               child: ElevatedButton(
                 onPressed: () {
-                  Get.to(DoctorsHelpling());
+                  // Get.to(DoctorsHelpling());
                 },
                 child: Text(
                   'Next',

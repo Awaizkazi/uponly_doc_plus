@@ -1,43 +1,48 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:uponly_doc_plus/Screens/sign_up.dart';
 
-import 'clinical_points.dart';
+class SignUp extends StatefulWidget {
+  const SignUp({super.key});
 
-class SignIn extends StatelessWidget {
-  const SignIn({super.key});
+  @override
+  State<SignUp> createState() => _SignUpState();
+}
 
+class _SignUpState extends State<SignUp> {
+  List<String> item = ['Your Role', 'User', 'Doctor'];
+  String defultDropDownValue = 'Your Role';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 10),
-          child: CircleAvatar(
-            radius: 40,
-            backgroundColor: Colors.green,
-            child: IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.arrow_back, color: Colors.white),
-            ),
-          ),
-        ),
-      ),
       body: Stack(
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 50),
+            padding: const EdgeInsets.only(top: 30, left: 10),
+            child: CircleAvatar(
+              radius: 30,
+              backgroundColor: Colors.green,
+              child: IconButton(
+                onPressed: () {
+                  Get.back();
+                },
+                icon: Icon(
+                  Icons.arrow_back,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 110),
             child: Container(
-              width: 300,
+              width: 220,
               height: 200,
               child: Image.asset('assets/sign_in.png'),
             ),
           ),
           Padding(
             padding: EdgeInsets.only(
-                top: MediaQuery.of(context).size.height * 0.3, left: 20),
+                top: MediaQuery.of(context).size.height * 0.2, left: 20),
             child: Container(
               child: SingleChildScrollView(
                 child: Column(
@@ -45,50 +50,58 @@ class SignIn extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Sign in',
+                      'Sign up',
                       style: TextStyle(
                           fontSize: 30,
                           fontWeight: FontWeight.w700,
                           color: Colors.grey[700]),
                     ),
+                    SizedBox(
+                      height: 20,
+                    ),
                     Text(
-                      'welcome back',
+                      'Create an account here',
                       style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w700,
                         color: Colors.grey[700],
                       ),
                     ),
+                    SizedBox(
+                      height: 30,
+                    ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Username *',
+                          'Full Name *',
                           style: TextStyle(
                             fontSize: 17,
                             fontWeight: FontWeight.w700,
-                            color: Colors.grey[800],
+                            color: Colors.grey[700],
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(top: 12.0, right: 18),
                           child: TextFormField(
-                            style: TextStyle(),
                             decoration: InputDecoration(
-                              hintText: "Enter Username",
+                              hintText: "Enter Full Name",
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),
                             ),
                           ),
                         ),
+                        SizedBox(
+                          height: 10,
+                        ),
                         Text(
-                          'Password *',
+                          'Mobile Number *',
                           style: TextStyle(
                             fontSize: 17,
                             fontWeight: FontWeight.w700,
-                            color: Colors.grey[800],
+                            color: Colors.grey[700],
                           ),
                         ),
                         Padding(
@@ -96,7 +109,7 @@ class SignIn extends StatelessWidget {
                           child: TextFormField(
                             style: TextStyle(),
                             decoration: InputDecoration(
-                              hintText: "Enter Password",
+                              hintText: "Enter Number",
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
                                 borderSide: BorderSide(color: Colors.white),
@@ -104,17 +117,57 @@ class SignIn extends StatelessWidget {
                             ),
                           ),
                         ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          'Your Role *',
+                          style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.grey[700],
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        // DropDown Button
+                        Padding(
+                          padding: const EdgeInsets.only(right: 30, left: 10),
+                          child: DecoratedBox(
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              border: Border.all(color: Colors.grey.shade600),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 33, right: 30),
+                              child: DropdownButton<String>(
+                                value: defultDropDownValue,
+                                items: item.map<DropdownMenuItem<String>>(
+                                    (String value) {
+                                  return DropdownMenuItem(
+                                    child: Text(value),
+                                    value: value,
+                                  );
+                                }).toList(),
+                                onChanged: (String? newValue) {
+                                  setState(() {
+                                    defultDropDownValue = newValue!;
+                                  });
+                                },
+                                isExpanded: true,
+                                style: TextStyle(
+                                    fontSize: 18, color: Colors.black),
+                              ),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 110),
-                      child: TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          'Forgot Password ?',
-                          style: TextStyle(fontSize: 16),
-                        ),
-                      ),
+                    SizedBox(
+                      height: 20,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 30),
@@ -124,7 +177,7 @@ class SignIn extends StatelessWidget {
                         child: ElevatedButton(
                           onPressed: () {},
                           child: Text(
-                            'Sign in',
+                            'Sign up',
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.w700,
@@ -140,22 +193,24 @@ class SignIn extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: 30,
+                      height: 20,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Text(
                           'New Member ? ',
-                          style: TextStyle(fontSize: 15),
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
-                        TextButton(
-                          onPressed: () {
-                            Get.to(SignUp());
-                          },
-                          child: Text(
-                            'Sign Up',
-                            style: TextStyle(color: Colors.green, fontSize: 17),
+                        Text(
+                          'Sign In ',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 2, 91, 5),
+                            fontSize: 17,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
                       ],
