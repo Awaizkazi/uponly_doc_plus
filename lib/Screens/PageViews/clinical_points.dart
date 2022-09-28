@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:uponly_doc_plus/Screens/PageViews/doctor_helpline.dart';
 import 'package:uponly_doc_plus/Screens/PageViews/find_trusted.dart';
-import 'package:uponly_doc_plus/Screens/sign_in.dart';
+
+import 'sign_in.dart';
 
 class ClinicalPoints extends StatelessWidget {
   const ClinicalPoints({super.key});
