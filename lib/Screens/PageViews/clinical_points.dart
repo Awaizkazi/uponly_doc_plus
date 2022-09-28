@@ -2,21 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:uponly_doc_plus/Screens/PageViews/doctor_helpline.dart';
 import 'package:uponly_doc_plus/Screens/PageViews/find_trusted.dart';
+import 'package:uponly_doc_plus/Screens/sign_in.dart';
 
 class ClinicalPoints extends StatelessWidget {
   const ClinicalPoints({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Contorller to keep track of which page we're on
-    PageController _controller = PageController();
-    // Keep track of if we are on the last page
-    bool onLastPage = false;
     return Scaffold(
       body: Column(
         children: [
           // Img , Heading 1 , Heading 2
-         Cards(),
+          Cards(
+            img: 'assets/clinical_points_1.jpeg',
+            head1: 'Clinical Points',
+            head2:
+                'The doctor-patient relationship\ninvolves vulnerability and turst.\nIt is one of the most moving and\n meaningful experiences shared\nby human beings. However,this\nrelationship and the encounters that\nflow from it are not always perfect.',
+          ),
           Padding(
             padding: const EdgeInsets.only(
               top: 60,
@@ -27,7 +29,7 @@ class ClinicalPoints extends StatelessWidget {
               height: 47,
               child: ElevatedButton(
                 onPressed: () {
-                  // Get.to(DoctorsHelpling());
+                  Get.to(SignIn());
                 },
                 child: Text(
                   'Get Started',

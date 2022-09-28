@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import 'clinical_points.dart';
 import 'find_trusted.dart';
 
 class DoctorsHelpling extends StatelessWidget {
@@ -27,7 +24,7 @@ class DoctorsHelpling extends StatelessWidget {
               height: 47,
               child: ElevatedButton(
                 onPressed: () {
-                  Get.to(ClinicalPoints());
+                  // Get.to(ClinicalPoints());
                 },
                 child: Text(
                   'Next',

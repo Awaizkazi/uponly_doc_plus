@@ -93,7 +93,10 @@ Widget Cards({img, head1, head2}) {
         elevation: 10,
         child: Column(
           children: [
-            Image.asset(img),
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Container(width: 200,height: 200,child: Image.asset(img)),
+            ),
             Text(
               head1,
               style: TextStyle(

@@ -29,9 +29,11 @@ class PageViews extends StatelessWidget {
             child: SmoothPageIndicator(
               controller: _controller,
               count: 3,
-              effect: ExpandingDotsEffect(
+              effect: ScrollingDotsEffect(
                 activeDotColor: Colors.green,
                 spacing: 10,
+                dotHeight: 17,
+                dotWidth: 17,
               ),
             ),
           ),
