@@ -10,10 +10,11 @@ class DoctorsHelpling extends StatelessWidget {
       body: Column(
         children: [
           Cards(
-              img: 'assets/doctor_helpline.png',
-              head1: "Doctor's Helpline",
-              head2:
-                  '      Factors affecting the\n doctor- patient relationship\n can be patient-dependent,\n provider-dependent health\n system-dependent,or due to\npatient-provider msimatch'),
+            img: 'assets/doctor_helpline.png',
+            head1: "Doctor's Helpline",
+            head2:
+                '      Factors affecting the\n doctor- patient relationship\n can be patient-dependent,\n provider-dependent health\n system-dependent,or due to\npatient-provider msimatch',
+          ),
           Padding(
             padding: const EdgeInsets.only(
               top: 30,

@@ -17,6 +17,9 @@ class FindTrusted extends StatelessWidget {
             head2:
                 'Trust, knowledge, regard, and loyalty\n  are the 4 elements that form the\n doctor-patient relationship, and the\n    nature of this relationship has an \n        impact on patient outcomes.',
           ),
+          SizedBox(
+            height: 10,
+          ),
           Padding(
             padding: const EdgeInsets.only(
               top: 30,
@@ -56,7 +59,7 @@ class FindTrusted extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {},
                 child: Text(
-                  'Skip',
+                  'SKIP',
                   style: TextStyle(
                     color: Colors.purple,
                     fontSize: 20,
@@ -89,13 +92,15 @@ Widget Cards({img, head1, head2}) {
       height: 500,
       width: 360,
       child: Card(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         shadowColor: Colors.grey,
         elevation: 10,
         child: Column(
           children: [
             Padding(
               padding: const EdgeInsets.all(12.0),
-              child: Container(width: 200,height: 200,child: Image.asset(img)),
+              child:
+                  Container(width: 200, height: 200, child: Image.asset(img)),
             ),
             Text(
               head1,

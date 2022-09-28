@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:uponly_doc_plus/Screens/Doctor_Dashboard/doctor_dashboard.dart';
 import 'package:uponly_doc_plus/Screens/sign_up.dart';
-
-import 'clinical_points.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({super.key});
@@ -19,7 +18,9 @@ class SignIn extends StatelessWidget {
             radius: 40,
             backgroundColor: Colors.green,
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.back();
+              },
               icon: Icon(Icons.arrow_back, color: Colors.white),
             ),
           ),
@@ -122,7 +123,9 @@ class SignIn extends StatelessWidget {
                         width: 320,
                         height: 47,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.to(DoctorDashboard());
+                          },
                           child: Text(
                             'Sign in',
                             style: TextStyle(

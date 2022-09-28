@@ -24,6 +24,9 @@ class PageViews extends StatelessWidget {
               ClinicalPoints(),
             ],
           ),
+          SizedBox(
+            height: 10,
+          ),
           Container(
             alignment: const Alignment(0, 0.6),
             child: SmoothPageIndicator(
@@ -32,8 +35,8 @@ class PageViews extends StatelessWidget {
               effect: ScrollingDotsEffect(
                 activeDotColor: Colors.green,
                 spacing: 10,
-                dotHeight: 17,
-                dotWidth: 17,
+                dotHeight: 10,
+                dotWidth: 10,
               ),
             ),
           ),
