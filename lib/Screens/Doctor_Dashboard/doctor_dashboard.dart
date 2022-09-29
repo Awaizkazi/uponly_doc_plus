@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:uponly_doc_plus/Screens/Doctor_Dashboard/appointment.dart';
 import 'package:uponly_doc_plus/Screens/Doctor_Dashboard/my_patient.dart';
 import 'my_header_drawer.dart';
 
@@ -58,13 +59,23 @@ class _DoctorDashboardState extends State<DoctorDashboard> {
             ),
             Row(
               children: [
-                CardDashboard(
-                  cardText: 'My Patient',
-                  cardImage: 'assets/dashboard_images/my_patient_icon.png',
+                GestureDetector(
+                  onTap: () {
+                    Get.to(MyPatient());
+                  },
+                  child: CardDashboard(
+                    cardText: 'My Patient',
+                    cardImage: 'assets/dashboard_images/my_patient_icon.png',
+                  ),
                 ),
-                CardDashboard(
-                  cardText: 'Appointment',
-                  cardImage: 'assets/dashboard_images/appointment_icon.png',
+                GestureDetector(
+                  onTap: (() {
+                    Get.to(Appointment());
+                  }),
+                  child: CardDashboard(
+                    cardText: 'Appointment',
+                    cardImage: 'assets/dashboard_images/appointment_icon.png',
+                  ),
                 ),
               ],
             ),
@@ -93,30 +104,25 @@ class _DoctorDashboardState extends State<DoctorDashboard> {
 Widget CardDashboard({cardText, cardImage}) {
   return Container(
     width: 200,
-    child: GestureDetector(
-      onTap: () {
-        Get.to(MyPatient());
-      },
-      child: Card(
-        shadowColor: Colors.grey.shade700,
-        elevation: 10,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15),
-        ),
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            Image.asset(
-              cardImage,
-              height: 140,
-              width: 100,
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 100),
-              child: Text(cardText),
-            ),
-          ],
-        ),
+    child: Card(
+      shadowColor: Colors.grey.shade700,
+      elevation: 10,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          Image.asset(
+            cardImage,
+            height: 140,
+            width: 100,
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: 100),
+            child: Text(cardText),
+          ),
+        ],
       ),
     ),
   );

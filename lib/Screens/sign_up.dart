@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:uponly_doc_plus/otp_screen.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -175,7 +176,9 @@ class _SignUpState extends State<SignUp> {
                         width: 320,
                         height: 47,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.to(OTPScreen());
+                          },
                           child: Text(
                             'Sign up',
                             style: TextStyle(
