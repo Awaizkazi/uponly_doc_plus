@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:uponly_doc_plus/Screens/Doctor_Dashboard/doctor_dashboard.dart';
 import 'package:uponly_doc_plus/Screens/sign_up.dart';
+import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 
 class OTPScreen extends StatefulWidget {
   const OTPScreen({super.key});
@@ -65,7 +66,7 @@ class _OTPScreenState extends State<OTPScreen> {
               child: Text(
                 "8978365721",
                 style: TextStyle(
-                    fontSize: 21,
+                    fontSize: 16,
                     color: Colors.green,
                     fontWeight: FontWeight.bold),
               ),
@@ -73,31 +74,70 @@ class _OTPScreenState extends State<OTPScreen> {
           ),
           Align(
             child: Padding(
-              padding: const EdgeInsets.only(top: 160),
+              padding: const EdgeInsets.only(top: 140),
               child: Text(
                 "Enter Verification code",
-                style: TextStyle(
-                  fontSize: 15,
+                style: TextStyle(fontSize: 15, wordSpacing: 2),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 260),
+            child: Align(
+              child: OtpTextField(
+                fieldWidth: 55,
+                numberOfFields: 4,
+                borderColor: Colors.green,
+                enabledBorderColor: Colors.grey.shade600,
+                //set to true to show as box or false to show as dash
+                showFieldAsBox: true,
+                //runs when a code is typed in
+                onCodeChanged: (String code) {
+                  //handle validation or checks here
+                },
+                //runs when every textfield is filled
+                onSubmit: (String verificationCode) {
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          title: Text("Verification Code"),
+                          content: Text('Code entered is $verificationCode'),
+                        );
+                      });
+                }, // end onSubmit
+              ),
+            ),
+          ),
+          Align(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 390),
+              child: SizedBox(
+                width: 300,
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Confirm',
+                    style: TextStyle(fontSize: 20, letterSpacing: 1),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color.fromARGB(255, 57, 2, 66),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
                 ),
               ),
             ),
           ),
           Align(
             child: Padding(
-              padding: const EdgeInsets.only(top: 250),
-              child: ElevatedButton(
-                onPressed: () {},
-                child: Text('Confirm'),
-              ),
-            ),
-          ),
-          Align(
-            child: Padding(
-              padding: const EdgeInsets.only(top: 400),
+              padding: const EdgeInsets.only(top: 500),
               child: Text(
                 "Resend Code",
                 style: TextStyle(
-                  fontSize: 18,
+                  fontSize: 15,
                   color: Colors.green,
                   fontWeight: FontWeight.w600,
                 ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:uponly_doc_plus/otp_screen.dart';
+import 'package:uponly_doc_plus/Screens/otp_screen.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
