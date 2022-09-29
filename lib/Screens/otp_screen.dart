@@ -111,7 +111,7 @@ class _OTPScreenState extends State<OTPScreen> {
           ),
           Align(
             child: Padding(
-              padding: const EdgeInsets.only(top: 390),
+              padding: const EdgeInsets.only(top: 400),
               child: SizedBox(
                 width: 300,
                 height: 50,
