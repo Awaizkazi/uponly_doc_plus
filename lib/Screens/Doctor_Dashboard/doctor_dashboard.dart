@@ -31,10 +31,16 @@ class _DoctorDashboardState extends State<DoctorDashboard> {
           ),
         ),
         appBar: AppBar(
+          iconTheme: IconThemeData(color: Colors.green),
+          elevation: 0,
+          backgroundColor: Colors.white,
           title: Row(
             children: [
               Icon(Icons.place),
-              Text('Navi Mumbai'),
+              Text(
+                'Navi Mumbai',
+                style: TextStyle(color: Colors.black),
+              ),
               Icon(Icons.arrow_drop_down),
               // Icon 2
             ],
@@ -43,6 +49,7 @@ class _DoctorDashboardState extends State<DoctorDashboard> {
             Icon(
               Icons.search,
               size: 30,
+              color: Colors.green,
             ),
           ],
         ),

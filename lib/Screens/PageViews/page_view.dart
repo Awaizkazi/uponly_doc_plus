@@ -29,6 +29,8 @@ class PageViews extends StatelessWidget {
           ),
           Container(
             alignment: const Alignment(0, 0.6),
+            // Smooth page Controller
+            
             child: SmoothPageIndicator(
               controller: _controller,
               count: 3,

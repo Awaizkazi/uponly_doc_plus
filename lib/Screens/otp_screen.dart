@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:uponly_doc_plus/Screens/Doctor_Dashboard/doctor_dashboard.dart';
+import 'package:uponly_doc_plus/Screens/set_password.dart';
 import 'package:uponly_doc_plus/Screens/sign_up.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 
@@ -116,11 +118,11 @@ class _OTPScreenState extends State<OTPScreen> {
                 width: 300,
                 height: 50,
                 child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Confirm',
-                    style: TextStyle(fontSize: 20, letterSpacing: 1),
-                  ),
+                  onPressed: () {
+                    Get.to(SetPassword());
+                  },
+                  child: Text('Confirm',
+                      style: GoogleFonts.robotoSerif(fontSize: 18)),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color.fromARGB(255, 57, 2, 66),
                     shape: RoundedRectangleBorder(
